@@ -17,7 +17,8 @@ class CountriesIterate:
         if not self.countries:
             raise StopIteration
         country = next(self.countries)
-        link = 'https://en.wikipedia.org/wiki/' + country
+        replace = country.replace(' ', '_')
+        link = 'https://en.wikipedia.org/wiki/' + replace
         return f'{country} - {link} \n'
 
 with open('countries_wiki.txt', 'w', encoding='utf-8') as d:
